@@ -1,0 +1,9 @@
+[
+  { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+
+  { "keys": ["ctrl+;"], "command": "toggle_comment", "args": { "block": false } },
+  { "keys": ["ctrl+shift+;"], "command": "toggle_comment", "args": { "block": true } },
+
+  { "keys": ["ctrl+tab"], "command": "next_view" },
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view" }
+]
