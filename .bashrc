@@ -111,7 +111,7 @@ alias rspec='rspec -c'
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
-export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \w\[\033[31m\] $(__git_ps1 "(%s)")\[\033[01;34m\]$\[\033[00m\] '
+export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \W [\A]\[\033[31m\] $(__git_ps1 "(%s)")\[\033[01;34m\]$\[\033[00m\] '
 export PATH=$PATH:/var/lib/gems/1.8/bin
 
 export JAVA_HOME=/opt/SDK/jdk/bin
