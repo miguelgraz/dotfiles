@@ -1,5 +1,5 @@
 [color]
-        ui = auto
+	ui = auto
 [user]
 	email = miguelgraz@gmail.com
 	name = Miguel Grazziotin
@@ -7,3 +7,5 @@
 	editor = subl -n -w
 [alias]
 	loga = log --oneline --decorate
+[push]
+	default = current
