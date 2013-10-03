@@ -20,6 +20,11 @@ HISTFILESIZE=2000
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
+# If set, the pattern "**" used in a pathname expansion context will
+# match all files and zero or more directories and subdirectories.
+# Enabling Globstar to easily select files in bash using a double star <3
+shopt -s globstar
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -78,7 +83,18 @@ alias la='ls -A'
 alias l='ls -CF'
 alias r='rails'
 alias rspec='rspec -c'
-alias play_all='mpg123 -Czv ~/Dropbox/Music/*/*'
+
+alias play='mpg123 -Czv ~/Dropbox/Music/**'
+alias play_folder=folder
+    folder(){
+      arg=$1;
+      mpg123 -Czv ~/Dropbox/Music/${arg}/**
+    }
+alias play_song=song
+    song(){
+      arg=$1;
+      mpg123 -Czv ~/Dropbox/Music/**/*${arg}*.mp3
+    }
 
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
