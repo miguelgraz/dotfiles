@@ -7,5 +7,6 @@
 	editor = subl -n -w
 [alias]
 	loga = log --oneline --decorate
+	stash = stash --include-untracked
 [push]
 	default = current
