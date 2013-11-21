@@ -6,7 +6,7 @@
 [core]
 	editor = subl -n -w
 [alias]
-	loga = log --oneline --decorate
 	stash = stash --include-untracked
+	hist = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 [push]
 	default = current
