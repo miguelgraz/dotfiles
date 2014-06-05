@@ -1,12 +1,14 @@
 {
-  "color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
 	"font_size": 9,
 	"gutter": true,
 	"highlight_modified_tabs": true,
 	"margin": 0,
 	"overlay_scroll_bars": "enabled",
 	"scroll_past_end": true,
+	"show_encoding": true,
 	"show_full_path": true,
+	"show_line_endings": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"word_wrap": false
