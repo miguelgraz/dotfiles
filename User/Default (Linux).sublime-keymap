@@ -5,5 +5,16 @@
   { "keys": ["ctrl+shift+;"], "command": "toggle_comment", "args": { "block": true } },
 
   { "keys": ["ctrl+tab"], "command": "next_view" },
-  { "keys": ["ctrl+shift+tab"], "command": "prev_view" }
+  { "keys": ["ctrl+shift+tab"], "command": "prev_view" },
+  
+  {
+    "keys": ["ctrl+shift+super+left"],
+    "command": "move_tab",
+    "args": { "position": "-1" }
+  },
+  {
+    "keys": ["ctrl+shift+super+right"],
+    "command": "move_tab",
+    "args": { "position": "+1" }
+  }
 ]
