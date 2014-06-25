@@ -1,5 +1,7 @@
 [color]
 	ui = auto
+[color "diff"]
+	meta = yellow
 [user]
 	email = miguelgraz@gmail.com
 	name = Miguel Grazziotin
