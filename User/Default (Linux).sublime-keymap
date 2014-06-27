@@ -1,5 +1,5 @@
 [
-  { "keys": ["ctrl+b"], "command": "toggle_side_bar" },
+  { "keys": ["ctrl+b"], "command": "focus_file_on_sidebar" },
 
   { "keys": ["ctrl+;"], "command": "toggle_comment", "args": { "block": false } },
   { "keys": ["ctrl+shift+;"], "command": "toggle_comment", "args": { "block": true } },
