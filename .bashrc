@@ -84,16 +84,16 @@ alias l='ls -CF'
 alias r='rails'
 alias rspec='rspec -c'
 
-alias play='mpg123 -Czv ~/Dropbox/Music/**'
+alias play='mpg123 -Czv ~/Music/**/*'
 alias play_folder=folder
     folder(){
       arg=$1;
-      mpg123 -Czv ~/Dropbox/Music/${arg}/**
+      mpg123 -Czv ~/Music/**/${arg}/**
     }
 alias play_song=song
     song(){
       arg=$1;
-      mpg123 -Czv ~/Dropbox/Music/**/*${arg}*.mp3
+      mpg123 -Czv ~/Music/**/*${arg}*.mp3
     }
 
 # enable color support of ls and also add handy aliases
