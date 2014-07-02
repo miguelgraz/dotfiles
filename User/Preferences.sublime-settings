@@ -12,5 +12,7 @@
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
 	"word_wrap": false,
-	"highlight_line": true
+	"highlight_line": true,
+	"folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "tmp/cache"],
+	"binary_file_patterns": ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip", "*.log"]
 }
