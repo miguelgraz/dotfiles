@@ -42,11 +42,15 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   sudo sh -c "echo 'deb http://archive.canonical.com/ trusty partner' >> /etc/apt/sources.list.d/canonical_partner.list" ; sudo apt-get update ; sudo apt-get -y install skype ;
   # Java needs
   sudo apt-get -y install icedtea-7-plugin openjdk-7-jre icedtea-plugin
+  # Flash plugin
+  sudo apt-get -y install pepperflashplugin-nonfree
   # Other basic apps
   sudo apt-get -y install aptitude mpg123 vlc rar htop
 
 
 # Development environment!
+  # Default folder
+  mkdir ~/Dev ;
   # Basic toolbelt
   sudo apt-get -y install curl git-core gitg build-essential nodejs libxslt-dev libxml2-dev imagemagick libmagickwand-dev npm phantomjs
   # Grab my custom .bashrc and .gitconfig (FIXME improve)
@@ -83,3 +87,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     gem install rspec
   # Customize Sublime Text and add some packages FIXME improve
   cd ~/Desktop ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/install_ST_plugins.sh ; chmod +x install_ST_plugins.sh ; . install_ST_plugins.sh ; rm -f install_ST_plugins.sh ;
+  # Create ssh keys and output it
+  ssh-keygen -t rsa -C "miguelgraz@gmail.com"
+  cat ~/.ssh/id_rsa.pub
