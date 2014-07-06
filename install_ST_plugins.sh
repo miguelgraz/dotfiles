@@ -1,3 +1,7 @@
+cd ~/Desktop ; git clone git@github.com:miguelgraz/dotfiles.git ;
+cp -r dotfiles/User ~/.config/sublime-text-3/Packages/
+rm -rf dotfiles ;
+
 cd ~/.config/sublime-text-3/Packages/
 
 git clone git://github.com/matthewrobertson/ERB-Sublime-Snippets.git ERB_Snippets
