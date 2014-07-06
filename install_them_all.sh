@@ -2,6 +2,8 @@
 
 # Initial upgrade
 sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
+# Remove useless apps/packages
+sudo apt-get -y remove rhythmbox
 
 # Desktop tweaks
   # Enable 2 horizontal workspaces
@@ -12,6 +14,11 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
   # Show user name on right corner
   gsettings set com.canonical.indicator.session show-real-name-on-panel true
+  # Datetime tweaks
+  gsettings set com.canonical.indicator.datetime show-date true
+  gsettings set com.canonical.indicator.datetime show-day true
+  gsettings set com.canonical.indicator.datetime locations "['Stockholm']"
+  gsettings set com.canonical.indicator.datetime show-locations true
   # Set my default wallpaper FIXME improve
   cd ~/Desktop ; wget https://www.dropbox.com/sh/i1soo9vhd2qdjzo/AAABuKn4w5IcW38jHJn95Y--a/LotR.jpg ; gsettings set org.gnome.desktop.background picture-uri file:///home/miguelgraz/Desktop/LotR.jpg ; rm -f LotR.jpg ;
   # Install Ubuntu Tweak for custom future tweaks
@@ -36,6 +43,8 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   sudo apt-get -y install libappindicator1 nautilus-dropbox
   # Chromium
   sudo apt-get -y install chromium-browser
+  # Pipelight to watch Netflix FIXME install https://addons.mozilla.org/en-US/firefox/addon/user-agent-overrider/?src=ss to Firefox
+  sudo add-apt-repository -y ppa:pipelight/stable ; sudo apt-get update ; sudo apt-get -y install --install-recommends pipelight-multi ; sudo pipelight-plugin -y --update ; sudo pipelight-plugin -y --enable silverlight ;
   # Sublime Text 3
   sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 ; sudo apt-get update; sudo apt-get -y install sublime-text-installer ;
   # Skype
@@ -46,7 +55,13 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   sudo apt-get -y install pepperflashplugin-nonfree
   # Other basic apps
   sudo apt-get -y install aptitude mpg123 vlc rar htop
-
+  # Set custom shortcuts
+    # Chromium
+    gsettings set org.compiz.integrated run-command-1 "['<Control><Alt>C']"
+    gsettings set org.compiz.integrated command-1 'chromium-browser'
+    # Sublime Text
+    gsettings set org.compiz.integrated run-command-2 "['<Control><Alt>S']"
+    gsettings set org.compiz.integrated command-2 'subl'
 
 # Development environment!
   # Default folder
@@ -90,3 +105,9 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Create ssh keys and output it
   ssh-keygen -t rsa -C "miguelgraz@gmail.com"
   cat ~/.ssh/id_rsa.pub
+
+# Last touches
+  # Create shortcuts to music folders inside the ~/Music folder
+  for d in /home/miguelgraz/Dropbox/Music/*/ ; do
+    sudo ln -s "$d" /home/miguelgraz/Desktop ;
+  done
