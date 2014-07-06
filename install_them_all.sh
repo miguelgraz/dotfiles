@@ -109,5 +109,5 @@ sudo apt-get -y remove rhythmbox
 # Last touches
   # Create shortcuts to music folders inside the ~/Music folder
   for d in /home/miguelgraz/Dropbox/Music/*/ ; do
-    sudo ln -s "$d" /home/miguelgraz/Desktop ;
+    sudo ln -s "$d" /home/miguelgraz/Music ;
   done
