@@ -1,5 +1,3 @@
-# TODO: Add my custom keyboard shortcuts
-
 # Initial upgrade
 sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
 # Remove useless apps/packages
