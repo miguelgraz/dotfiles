@@ -1,7 +1,7 @@
-# Initial upgrade
-sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
 # Remove useless apps/packages
 sudo apt-get -y remove rhythmbox
+# Initial upgrade
+sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
 
 # Desktop tweaks
   # Enable 2 horizontal workspaces
