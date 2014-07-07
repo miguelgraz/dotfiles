@@ -4,6 +4,9 @@ sudo apt-get -y remove rhythmbox
 sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
 
 # Desktop tweaks
+  # Best shortcuts ever to increase/decrease volume
+  gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "<Ctrl><Shift>Up"
+  gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "<Ctrl><Shift>Down"
   # Enable 2 horizontal workspaces
   gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 2
   # and 3 vertical workspaces
