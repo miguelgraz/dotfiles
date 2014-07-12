@@ -1,6 +1,3 @@
-# Be root always
-# sudo su
-
 # Dropbox, to start downloading early
 sudo apt-get -y install libappindicator1 nautilus-dropbox
 dropbox start
@@ -30,7 +27,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Set my default wallpaper FIXME improve
   cd /home/miguelgraz/Desktop ; wget https://www.dropbox.com/sh/i1soo9vhd2qdjzo/AAABuKn4w5IcW38jHJn95Y--a/LotR.jpg ;
   gsettings set org.gnome.desktop.background picture-uri file:///home/miguelgraz/Desktop/LotR.jpg ;
-  gsettings set com.canonical.unity-greeter background '/home/miguelgraz/Desktop/LotR.jpg' ;
   rm -f LotR.jpg ;
   # Install Ubuntu Tweak for custom future tweaks
   sudo add-apt-repository -y ppa:tualatrix/ppa ; sudo apt-get update ; sudo apt-get -y install ubuntu-tweak ;
