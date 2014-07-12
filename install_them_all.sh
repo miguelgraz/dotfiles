@@ -1,5 +1,5 @@
 # Be root always
-sudo su
+# sudo su
 
 # Dropbox, to start downloading early
 sudo apt-get -y install libappindicator1 nautilus-dropbox
