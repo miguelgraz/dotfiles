@@ -3,6 +3,7 @@
 
 # Dropbox, to start downloading early
 sudo apt-get -y install libappindicator1 nautilus-dropbox
+dropbox start
 
 # Remove useless apps/packages
 sudo apt-get -y remove rhythmbox
