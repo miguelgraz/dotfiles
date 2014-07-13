@@ -1,6 +1,10 @@
-# Dropbox, to start downloading early
-sudo apt-get -y install libappindicator1 nautilus-dropbox
-dropbox start
+# Start with things that need interation
+  # Dropbox, to start downloading early
+  sudo apt-get -y install libappindicator1 nautilus-dropbox
+  dropbox start
+  # Create ssh keys
+  ssh-keygen -t rsa -C "miguelgraz@gmail.com"
+  cat /home/miguelgraz/.ssh/id_rsa.pub
 
 # Remove useless apps/packages
 sudo apt-get -y remove rhythmbox
@@ -26,7 +30,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   gsettings set com.canonical.indicator.datetime show-locations true
   # Set my default wallpaper FIXME improve
   cd /home/miguelgraz/Desktop ; wget https://www.dropbox.com/sh/i1soo9vhd2qdjzo/AAABuKn4w5IcW38jHJn95Y--a/LotR.jpg ;
-  gsettings set org.gnome.desktop.background picture-uri file:///home/miguelgraz/Desktop/LotR.jpg ;
+  gsettings set org.gnome.desktop.background picture-uri "file:///home/miguelgraz/Desktop/LotR.jpg" ;
   rm -f LotR.jpg ;
   # Install Ubuntu Tweak for custom future tweaks
   sudo add-apt-repository -y ppa:tualatrix/ppa ; sudo apt-get update ; sudo apt-get -y install ubuntu-tweak ;
@@ -86,18 +90,19 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     # Redis
     sudo apt-get -y install redis-server
     # Postgres
-    sudo apt-get -y install postgresql libpq-dev pgadmin3 ; sudo -u postgres psql template1 ; 
+    sudo apt-get -y install postgresql libpq-dev pgadmin3 ;
+    # FIXME not sure if needed
+    # sudo -u postgres psql template1 ;
     # FIXME setup postgres' password automatically
     # \password postgres
     # FIXME not sure if needed
     sudo update-rc.d postgresql enable
   # Ruby
     # RVM
-    \curl -sSL https://get.rvm.io | bash -s stable --ruby
+    curl -sSL https://get.rvm.io | bash -s stable --ruby
     source /home/miguelgraz/.rvm/scripts/rvm
     rvm autolibs enable
     # Install some rubies
-    rvm install 1.9.3
     rvm install 2.0.0
     # Some needed gems
     gem install rdoc
@@ -107,12 +112,10 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Customize Sublime Text and add some packages FIXME improve
   cd /home/miguelgraz/Desktop ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/install_ST_plugins.sh ; chmod +x install_ST_plugins.sh ; . install_ST_plugins.sh ; rm -f install_ST_plugins.sh ;
 
-# Last touches
+# Last touches and/or things that need interation
   # Create shortcuts to music folders inside the ~/Music folder
   for d in /home/miguelgraz/Dropbox/Music/*/ ; do
     sudo ln -s "$d" /home/miguelgraz/Music ;
   done
   # Pipelight to watch Netflix, needs interation FIXME install https://addons.mozilla.org/en-US/firefox/addon/user-agent-overrider/?src=ss to Firefox
   sudo add-apt-repository -y ppa:pipelight/stable ; sudo apt-get update ; sudo apt-get -y install --install-recommends pipelight-multi ; sudo pipelight-plugin -y --update ; sudo pipelight-plugin -y --enable silverlight ;
-  # Create ssh keys
-  ssh-keygen -t rsa -C "miguelgraz@gmail.com"
