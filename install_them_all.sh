@@ -4,6 +4,8 @@
   dropbox start
   # Create ssh keys
   ssh-keygen -t rsa -C "miguelgraz@gmail.com"
+  echo "Don't forget to add this key to github on https://github.com/settings/ssh"
+  echo "or Sublime Text won't be customized"
   cat /home/miguelgraz/.ssh/id_rsa.pub
 
 # Remove useless apps/packages
