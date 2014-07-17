@@ -76,7 +76,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Default folder
   mkdir /home/miguelgraz/Dev ;
   # Basic toolbelt
-  sudo apt-get -y install curl git-core gitg build-essential nodejs libxslt-dev libxml2-dev imagemagick libmagickwand-dev npm phantomjs
+  sudo apt-get -y install curl git-core gitg build-essential nodejs libxslt-dev libxml2-dev imagemagick libmagickwand-dev npm phantomjs libmysqlclient-dev libmysqlclient18 ruby-dev
   # Grab my custom .bashrc and .gitconfig (FIXME improve)
   cd /home/miguelgraz ;
   rm -f .bashrc ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.bashrc ;
