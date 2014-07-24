@@ -62,7 +62,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Flash plugin
   sudo apt-get -y install pepperflashplugin-nonfree
   # Other basic apps
-  sudo apt-get -y install aptitude mpg123 vlc rar htop virtualbox
+  sudo apt-get -y install aptitude mpg123 vlc rar htop virtualbox whois
   # Set custom shortcuts FIXME it seems to lose these shortcuts after a reboot
     # Chromium
     gsettings set org.compiz.integrated run-command-1 "['<Control><Alt>C']"
