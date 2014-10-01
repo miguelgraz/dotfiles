@@ -114,6 +114,8 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 [[ -s $HOME/.rvm/scripts/rvm ]] && source $HOME/.rvm/scripts/rvm
+PROMPT_COMMAND='echo -ne "\033]0; ${PWD##*/}\007"'
+
 export PS1='\[\033[01;32m\]\u@\h\[\033[01;34m\] \W [\A]\[\033[31m\] $(__git_ps1 "(%s)")\[\033[01;34m\]$\[\033[00m\] '
 export PATH=$PATH:/var/lib/gems/1.8/bin
 
