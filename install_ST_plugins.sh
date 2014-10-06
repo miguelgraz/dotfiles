@@ -1,4 +1,5 @@
 cd ~/Desktop ; git clone git@github.com:miguelgraz/dotfiles.git ;
+cp dotfiles/TwilightBold.tmTheme ~/.config/sublime-text-3/Cache/Color\ Scheme\ -\ Default/
 cp -r dotfiles/User ~/.config/sublime-text-3/Packages/
 rm -rf dotfiles ;
 
