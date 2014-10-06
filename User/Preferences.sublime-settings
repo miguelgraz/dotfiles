@@ -1,7 +1,33 @@
 {
-	"color_scheme": "Packages/Color Scheme - Default/Twilight.tmTheme",
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip",
+		"*.log"
+	],
+	"color_scheme": "Cache/Color Scheme - Default/TwilightBold.tmTheme",
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"tmp/cache"
+	],
 	"font_size": 9,
 	"gutter": true,
+	"highlight_line": true,
 	"highlight_modified_tabs": true,
 	"margin": 0,
 	"overlay_scroll_bars": "enabled",
@@ -11,8 +37,5 @@
 	"show_line_endings": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
-	"word_wrap": false,
-	"highlight_line": true,
-	"folder_exclude_patterns": [".svn", ".git", ".hg", "CVS", "tmp/cache"],
-	"binary_file_patterns": ["*.jpg", "*.jpeg", "*.png", "*.gif", "*.ttf", "*.tga", "*.dds", "*.ico", "*.eot", "*.pdf", "*.swf", "*.jar", "*.zip", "*.log"]
+	"word_wrap": false
 }
