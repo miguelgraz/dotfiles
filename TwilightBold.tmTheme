@@ -9,25 +9,8 @@
 <dict>
 	<key>author</key>
 	<string>Michael Sheets</string>
-	<key>gutterSettings</key>
-	<dict>
-		<key>background</key>
-		<string>#2F2F31</string>
-		<key>divider</key>
-		<string>#414143</string>
-		<key>foreground</key>
-		<string>#8F8F8F</string>
-		<key>selectionBackground</key>
-		<string>#414143</string>
-		<key>selectionBorder</key>
-		<string>#484848</string>
-		<key>selectionForeground</key>
-		<string>#BABABA</string>
-	</dict>
 	<key>name</key>
 	<string>Twilight</string>
-	<key>semanticClass</key>
-	<string>theme.dark.twilight</string>
 	<key>settings</key>
 	<array>
 		<dict>
@@ -42,20 +25,9 @@
 				<key>invisibles</key>
 				<string>#FFFFFF40</string>
 				<key>lineHighlight</key>
-				<string>#FFFFFF08</string>
+				<string>#A6944200</string>
 				<key>selection</key>
 				<string>#DDF0FF33</string>
-			</dict>
-		</dict>
-		<dict>
-			<key>name</key>
-			<string>Foldings</string>
-			<key>scope</key>
-			<string>deco.folding</string>
-			<key>settings</key>
-			<dict>
-				<key>foreground</key>
-				<string>#5A6A65</string>
 			</dict>
 		</dict>
 		<dict>
@@ -188,14 +160,13 @@
 			<key>name</key>
 			<string>-----------------------------------</string>
 			<key>settings</key>
-			<dict>
-			</dict>
+			<dict/>
 		</dict>
 		<dict>
 			<key>name</key>
 			<string>♦ Embedded Source</string>
 			<key>scope</key>
-			<string>meta.embedded.block, punctuation.whitespace.embedded</string>
+			<string>text source</string>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
@@ -206,7 +177,7 @@
 			<key>name</key>
 			<string>♦ Embedded Source (Bright)</string>
 			<key>scope</key>
-			<string>meta.embedded.line</string>
+			<string>text.html.ruby source</string>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
@@ -230,7 +201,7 @@
 			<key>name</key>
 			<string>♦ String embedded-source</string>
 			<key>scope</key>
-			<string>string meta.embedded</string>
+			<string>string source</string>
 			<key>settings</key>
 			<dict>
 				<key>fontStyle</key>
@@ -313,7 +284,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>c C&#x2f;C++ Preprocessor Line</string>
+			<string>c C/C++ Preprocessor Line</string>
 			<key>scope</key>
 			<string>meta.preprocessor.c</string>
 			<key>settings</key>
@@ -324,7 +295,7 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>c C&#x2f;C++ Preprocessor Directive</string>
+			<string>c C/C++ Preprocessor Directive</string>
 			<key>scope</key>
 			<string>meta.preprocessor.c keyword</string>
 			<key>settings</key>
@@ -335,9 +306,9 @@
 		</dict>
 		<dict>
 			<key>name</key>
-			<string>✘ Doctype&#x2f;XML Processing</string>
+			<string>✘ Doctype/XML Processing</string>
 			<key>scope</key>
-			<string>meta.tag.sgml.doctype, meta.tag.sgml.doctype entity, meta.tag.sgml.doctype keyword, meta.tag.sgml.doctype variable, meta.tag.sgml.doctype string, meta.tag.preprocessor.xml, meta.tag.preprocessor.xml entity, meta.tag.preprocessor.xml string</string>
+			<string>meta.tag.sgml.doctype, meta.tag.sgml.doctype entity, meta.tag.sgml.doctype string, meta.tag.preprocessor.xml, meta.tag.preprocessor.xml entity, meta.tag.preprocessor.xml string</string>
 			<key>settings</key>
 			<dict>
 				<key>foreground</key>
@@ -469,7 +440,7 @@
 			<key>name</key>
 			<string>⎇ diff.header</string>
 			<key>scope</key>
-			<string>meta.diff, meta.diff.header, meta.separator, meta.diff.range, meta.diff.index</string>
+			<string>meta.diff, meta.diff.header, meta.separator</string>
 			<key>settings</key>
 			<dict>
 				<key>background</key>
@@ -541,21 +512,8 @@
 				<string>#CF6A4C</string>
 			</dict>
 		</dict>
-		<dict>
-			<key>name</key>
-			<string>Markup: Raw Block</string>
-			<key>scope</key>
-			<string>markup.raw.block</string>
-			<key>settings</key>
-			<dict>
-				<key>background</key>
-				<string>#B0B3BA14</string>
-			</dict>
-		</dict>
 	</array>
 	<key>uuid</key>
 	<string>766026CB-703D-4610-B070-8DE07D967C5F</string>
-	<key>colorSpaceName</key>
-	<string>sRGB</string>
 </dict>
 </plist>
