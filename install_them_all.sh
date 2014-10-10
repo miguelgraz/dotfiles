@@ -92,7 +92,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     # Redis
     sudo apt-get -y install redis-server
     # Postgres
-    sudo apt-get -y install postgresql postgresql-contrib libpq-dev pgadmin3 ;
+    sudo apt-get -y install uuid postgresql postgresql-contrib libpq-dev pgadmin3 ;
     # FIXME not sure if needed
     # sudo -u postgres psql template1 ;
     # FIXME setup postgres' password automatically
