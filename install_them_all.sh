@@ -51,8 +51,8 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   gconftool-2 --type boolean --set /apps/gnome-terminal/profiles/Default/scrollback_unlimited true
 
 # Install general apps
-  # Chromium
-  sudo apt-get -y install chromium-browser
+  # Chrome
+  sudo apt-get -y install google-chrome
   # Sublime Text 3
   sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 ; sudo apt-get update; sudo apt-get -y install sublime-text-installer ;
   # Skype
@@ -64,10 +64,10 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Other basic apps
   sudo apt-get -y install aptitude mpg123 vlc rar htop virtualbox whois
   # Set custom shortcuts FIXME it seems to lose these shortcuts after a reboot
-    # Chromium
+    # Chrome
     gsettings set org.compiz.integrated run-command-1 "['<Control><Alt>C']"
     # /apps/compiz-1/plugins/commands/screen0/options/command1
-    gsettings set org.compiz.integrated command-1 "chromium-browser"
+    gsettings set org.compiz.integrated command-1 "google-chrome"
     # Sublime Text
     gsettings set org.compiz.integrated run-command-2 "['<Control><Alt>S']"
     gsettings set org.compiz.integrated command-2 "subl"
@@ -119,5 +119,3 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   for d in /home/miguelgraz/Dropbox/Music/*/ ; do
     sudo ln -s "$d" /home/miguelgraz/Music ;
   done
-  # Pipelight to watch Netflix, needs interation FIXME install https://addons.mozilla.org/en-US/firefox/addon/user-agent-overrider/?src=ss to Firefox
-  sudo add-apt-repository -y ppa:pipelight/stable ; sudo apt-get update ; sudo apt-get -y install --install-recommends pipelight-multi ; sudo pipelight-plugin -y --update ; sudo pipelight-plugin -y --enable silverlight ;
