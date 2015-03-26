@@ -61,6 +61,8 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   sudo apt-get -y install icedtea-7-plugin openjdk-7-jre icedtea-plugin
   # Flash plugin
   sudo apt-get -y install pepperflashplugin-nonfree
+  # Popcorn Time
+  sudo add-apt-repository -y ppa:webupd8team/popcorntime ; sudo apt-get update; sudo apt-get -y install popcorn-time ;
   # Other basic apps
   sudo apt-get -y install aptitude mpg123 vlc rar htop virtualbox whois
   # Set custom shortcuts FIXME it seems to lose these shortcuts after a reboot
