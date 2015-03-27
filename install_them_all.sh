@@ -121,3 +121,5 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   for d in /home/miguelgraz/Dropbox/Music/*/ ; do
     sudo ln -s "$d" /home/miguelgraz/Music ;
   done
+  # Remove no longer required packages
+  sudo apt-get -y autoremove
