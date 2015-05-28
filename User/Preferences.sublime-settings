@@ -37,5 +37,6 @@
 	"show_line_endings": true,
 	"tab_size": 2,
 	"translate_tabs_to_spaces": true,
-	"word_wrap": false
+	"word_wrap": false,
+	"trim_trailing_white_space_on_save": true
 }
