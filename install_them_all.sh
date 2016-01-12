@@ -28,7 +28,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Datetime tweaks
   gsettings set com.canonical.indicator.datetime show-date true
   gsettings set com.canonical.indicator.datetime show-day true
-  gsettings set com.canonical.indicator.datetime locations "['Stockholm']"
   gsettings set com.canonical.indicator.datetime show-locations true
   # Set my default wallpaper FIXME improve
   cd /home/miguelgraz/Desktop ; wget https://www.dropbox.com/sh/i1soo9vhd2qdjzo/AAABuKn4w5IcW38jHJn95Y--a/LotR.jpg ;
@@ -65,15 +64,35 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Popcorn Time
   sudo add-apt-repository -y ppa:webupd8team/popcorntime ; sudo apt-get update; sudo apt-get -y install popcorn-time ;
   # Other basic apps
-  sudo apt-get -y install aptitude mpg123 vlc rar htop virtualbox whois
-  # Set custom shortcuts FIXME it seems to lose these shortcuts after a reboot
+  sudo apt-get -y install aptitude mpg123 moc vlc rar htop virtualbox whois
+  # Set custom shortcuts
     # Chrome
     gsettings set org.compiz.integrated run-command-1 "['<Control><Alt>C']"
-    # /apps/compiz-1/plugins/commands/screen0/options/command1
     gsettings set org.compiz.integrated command-1 "google-chrome"
     # Sublime Text
     gsettings set org.compiz.integrated run-command-2 "['<Control><Alt>S']"
     gsettings set org.compiz.integrated command-2 "subl"
+    # Multimedia keyboard shortcuts configs to control MOC through bluetooth headphones \m/ d(-_-)b
+      # For some reason the headphone sends the keycode 208 and the XF86AudioPlay simply doesn't work, using "AudioForward" binding to emulate it then (see line 83)
+      xmodmap -e "keycode 208 = XF86AudioForward"
+      # Activate them all
+      gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']"
+      # Play
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "MOC Play"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "mocp --toggle-pause"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "AudioForward"
+      # Pause
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name "MOC Pause"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command "mocp --toggle-pause"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding "AudioPause"
+      # Next song
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name "MOC Next Song"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command "mocp --next"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding "AudioNext"
+      # Previous song
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name "MOC Previous Song"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command "mocp --previous"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding "AudioPrev"
 
 # Development environment!
   # Default folder
