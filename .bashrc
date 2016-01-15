@@ -84,7 +84,7 @@ alias l='ls -CF'
 alias r='rails'
 alias rspec='rspec -c'
 
-alias play='mpg123 -Czv ~/Music/**/*'
+alias play='mocp --server ; mocp --play'
 alias play_folder=folder
     folder(){
       arg=$1;

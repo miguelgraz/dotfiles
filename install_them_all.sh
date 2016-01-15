@@ -64,7 +64,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Popcorn Time
   sudo add-apt-repository -y ppa:webupd8team/popcorntime ; sudo apt-get update; sudo apt-get -y install popcorn-time ;
   # Other basic apps
-  sudo apt-get -y install aptitude mpg123 moc vlc rar htop virtualbox whois
+  sudo apt-get -y install aptitude curl git-core gitg mpg123 moc moc-ffmpeg-plugin vlc rar htop virtualbox whois
   # Set custom shortcuts
     # Chrome
     gsettings set org.compiz.integrated run-command-1 "['<Control><Alt>C']"
@@ -72,9 +72,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     # Sublime Text
     gsettings set org.compiz.integrated run-command-2 "['<Control><Alt>S']"
     gsettings set org.compiz.integrated command-2 "subl"
-    # Multimedia keyboard shortcuts configs to control MOC through bluetooth headphones \m/ d(-_-)b
-      # For some reason the headphone sends the keycode 208 and the XF86AudioPlay simply doesn't work, using "AudioForward" binding to emulate it then (see line 83)
-      xmodmap -e "keycode 208 = XF86AudioForward"
+    # Multimedia keyboard shortcuts configs to control MOC through bluetooth headphones \m/ d(-_-)b \m/
       # Activate them all
       gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']"
       # Play
@@ -93,17 +91,27 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name "MOC Previous Song"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command "mocp --previous"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding "AudioPrev"
+  # Grab custom config files
+    cd /home/miguelgraz ;
+    # .bashrc
+    rm -f .bashrc ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.bashrc ;
+    source /home/miguelgraz/.bashrc
+    # .gitconfig
+    rm -f .gitconfig ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gitconfig ;
+    # AutoStartMOC
+    mkdir /home/miguelgraz/.config/autostart ;
+    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.desktop ;
+    mv /home/miguelgraz/moc.desktop /home/miguelgraz/.config/autostart/ ;
+    # MOC config
+    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.config ;
+    rm -f /home/miguelgraz/.moc/config ;
+    mv /home/miguelgraz/moc.config /home/miguelgraz/.moc/config ;
 
 # Development environment!
   # Default folder
   mkdir /home/miguelgraz/Dev ;
   # Basic toolbelt
-  sudo apt-get -y install curl git-core gitg build-essential nodejs libxslt-dev libxml2-dev imagemagick libmagickwand-dev npm phantomjs libmysqlclient-dev libmysqlclient18 ruby-dev libqt4-dev
-  # Grab my custom .bashrc and .gitconfig (FIXME improve)
-  cd /home/miguelgraz ;
-  rm -f .bashrc ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.bashrc ;
-  rm -f .gitconfig ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gitconfig ;
-  source /home/miguelgraz/.bashrc
+  sudo apt-get -y install build-essential nodejs libxslt-dev libxml2-dev imagemagick libmagickwand-dev npm phantomjs libmysqlclient-dev libmysqlclient18 ruby-dev libqt4-dev
   # Heroku toolbelt
   wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
   # Databases
