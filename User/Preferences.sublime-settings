@@ -26,6 +26,7 @@
 		"CVS",
 		"tmp/cache"
 	],
+	"ignored_packages": ["Vintage"],
 	"font_size": 9,
 	"gutter": true,
 	"highlight_line": true,
