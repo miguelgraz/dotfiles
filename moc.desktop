@@ -2,7 +2,7 @@
 Type=Application
 Name=AutoStartMOC
 GenericName=Miguels Custom Script
-Comment=Bind keycode 208 and start MOC
-Exec=sh -c "/usr/bin/mocp --server && /usr/bin/xmodmap -e 'keycode 208 = XF86AudioForward'"
+Comment=Start MOC server
+Exec=sh -c "/usr/bin/mocp --server"
 Terminal=false
 X-GNOME-Autostart-enabled=true
