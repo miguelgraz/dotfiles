@@ -72,25 +72,50 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     # Sublime Text
     gsettings set org.compiz.integrated run-command-2 "['<Control><Alt>S']"
     gsettings set org.compiz.integrated command-2 "subl"
-    # Multimedia keyboard shortcuts configs to control MOC through bluetooth headphones \m/ d(-_-)b \m/
-      # Activate them all
-      gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/']"
-      # Play
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "MOC Play"
+    # Global shortcuts configs to control MOC through bluetooth headphones and keyboard \m/ d(-_-)b \m/
+      # Headphone Play
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "MOC Headphone Play"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "mocp --toggle-pause"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "AudioForward"
-      # Pause
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name "MOC Pause"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "AudioPlay"
+      # Headphone Pause
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name "MOC Headphone Pause"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command "mocp --toggle-pause"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding "AudioPause"
-      # Next song
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name "MOC Next Song"
+      # Headphone Next song
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name "MOC Headphone Next Song"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command "mocp --next"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding "AudioNext"
-      # Previous song
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name "MOC Previous Song"
+      # Headphone Previous song
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name "MOC Headphone Previous Song"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command "mocp --previous"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding "AudioPrev"
+      # Keyboard Play song
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ name "MOC Keyboard Play"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ command "mocp --play"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ binding "<Primary><Alt>Return"
+      # Keyboard Pause/Unpause
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ name "MOC Keyboard PlayPause"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ command "mocp --toggle-pause"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ binding "<Primary><Alt>space"
+      # Keyboard Next song
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name "MOC Keyboard Next Song"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command "mocp --next"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding "<Primary><Alt>N"
+      # Keyboard Previous song
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name "MOC Keyboard Previous Song"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command "mocp --previous"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding "<Primary><Alt>B"
+      # Activate them all
+      gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/'
+      ]"
   # Grab custom config files
     cd /home/miguelgraz ;
     # .bashrc
