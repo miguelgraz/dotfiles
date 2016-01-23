@@ -1,5 +1,6 @@
 cd ~/Desktop ; git clone git@github.com:miguelgraz/dotfiles.git ;
 cp dotfiles/TwilightBold.tmTheme ~/.config/sublime-text-3/Packages
+cp dotfiles/Railscasts\ Modified.tmTheme ~/.config/sublime-text-3/Packages
 cp -r dotfiles/User ~/.config/sublime-text-3/Packages/
 rm -rf dotfiles ;
 
