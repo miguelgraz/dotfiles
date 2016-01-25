@@ -131,6 +131,9 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.config ;
     rm -f /home/miguelgraz/.moc/config ;
     mv /home/miguelgraz/moc.config /home/miguelgraz/.moc/config ;
+    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/notify_script.sh ;
+    chmod +x notify_script.sh ;
+    mv /home/miguelgraz/notify_script.sh /home/miguelgraz/.moc/notify_script.sh ;
 
 # Development environment!
   # Default folder
