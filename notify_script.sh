@@ -8,5 +8,5 @@ title=$2;
 /usr/bin/notify-send "${artist} - ${title}";
 # notify-send ignores the timeout parameter
 # so we kill the process manually
-sleep 1.5;
+sleep 1;
 pkill notify-osd;
