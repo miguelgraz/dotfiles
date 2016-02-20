@@ -24,10 +24,16 @@ folders.each do |folder|
   Dir.entries("#{path}#{folder}").each do |f|
     next if ['.', '..'].include?(f)
     TagLib::MPEG::File.open("#{path}#{folder}/#{f}") do |file|
-      tag = file.id3v2_tag(true)
       artist, title = f.gsub(folder, '').gsub('.mp3', '').split(' - ', 2)
+
+      tag = file.id3v2_tag(true)
       tag.artist = artist
       tag.title = title
+
+      tag = file.id3v1_tag(true)
+      tag.artist = artist
+      tag.title = title
+
       file.save
       puts tag.artist
       puts tag.title
