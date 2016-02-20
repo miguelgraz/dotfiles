@@ -105,6 +105,10 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name "MOC Keyboard Previous Song"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command "mocp --previous"
       gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding "<Primary><Alt>B"
+      # Keyboard Notify Current song
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ name "MOC Send Notification Current Song"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ command "/home/miguelgraz/.moc/notify_script.sh"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ binding "<Primary><Alt>I"
       # Activate them all
       gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
         '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/',
@@ -114,7 +118,8 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
         '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/',
         '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/',
         '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/',
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/'
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/',
+        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/'
       ]"
   # Grab custom config files
     cd /home/miguelgraz ;
