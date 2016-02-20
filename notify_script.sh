@@ -6,5 +6,5 @@
 /usr/bin/notify-send "`mocp --format %artist` - `mocp --format %song`";
 # notify-send ignores the timeout parameter
 # so we kill the process manually
-sleep 1.5;
+sleep 1;
 pkill notify-osd;

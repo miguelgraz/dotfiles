@@ -84,8 +84,6 @@ alias l='ls -CF'
 alias r='rails'
 alias rspec='rspec -c'
 
-alias play='mocp --server ; mocp --play'
-
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
