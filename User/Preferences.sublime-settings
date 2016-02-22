@@ -55,5 +55,9 @@
 	"material_theme_small_statusbar": true,
 	"material_theme_small_tab": true,
 	"material_theme_tabs_autowidth": true,
-	"material_theme_tabs_separator": true ,
+	"material_theme_tabs_separator": true,
+	"caret_style": "phase",
+	"wide_caret": true,
+	"caret_extra_bottom": 3,
+	"caret_extra_top": 3,
 }
