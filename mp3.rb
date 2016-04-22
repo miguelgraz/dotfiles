@@ -31,11 +31,6 @@ folders.each do |folder|
       tag.title = title
       file.save
 
-      tag = file.id3v1_tag(true)
-      tag.artist = artist
-      tag.title = title
-      file.save
-
       puts tag.artist
       puts tag.title
       puts '==================================='
