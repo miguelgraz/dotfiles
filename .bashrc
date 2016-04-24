@@ -84,6 +84,23 @@ alias l='ls -CF'
 alias r='rails'
 alias rspec='rspec -c'
 
+alias play=all
+    all(){
+        mocp --stop;
+        mocp --clear;
+        mocp --append /home/miguelgraz/Music/ ;
+        mocp --play;
+    }
+
+alias play_song=song
+    song(){
+        arg=$@;
+        mocp --stop;
+        mocp --clear;
+        find -L /home/miguelgraz/Music/ -iname "*${arg}*" -exec mocp --append {} ';'
+        mocp --play;
+    }
+
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
