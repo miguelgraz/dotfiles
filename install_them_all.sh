@@ -62,7 +62,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Flash plugin
   sudo apt-get -y install pepperflashplugin-nonfree
   # Other basic apps
-  sudo apt-get -y install aptitude curl git-core gitg mpg123 moc moc-ffmpeg-plugin vlc rar htop virtualbox whois
+  sudo apt-get -y install aptitude curl git-core moc moc-ffmpeg-plugin vlc rar htop virtualbox whois
   # Set custom shortcuts
     # Chrome
     gsettings set org.compiz.integrated run-command-1 "['<Control><Alt>C']"
@@ -142,22 +142,16 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Default folder
   mkdir /home/miguelgraz/Dev ;
   # Basic toolbelt
-  sudo apt-get -y install build-essential nodejs libxslt-dev libxml2-dev imagemagick libmagickwand-dev npm phantomjs libmysqlclient-dev libmysqlclient18 ruby-dev libqt4-dev
+  sudo apt-get -y install build-essential nodejs libxslt-dev libxml2-dev imagemagick libmagickwand-dev npm phantomjs ruby-dev libqt4-dev
   # Heroku toolbelt
   wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
   # Databases
     # Sqlite (yep)
     sudo apt-get -y install sqlite3 libsqlite3-dev
-    # MySQL
-    sudo apt-get -y install mysql-server libmysqlclient-dev mysql-client libmysql-ruby libdbd-mysql
     # Redis
     sudo apt-get -y install redis-server
     # Postgres
     sudo apt-get -y install uuid postgresql postgresql-contrib libpq-dev pgadmin3 ;
-    # FIXME not sure if needed
-    # sudo -u postgres psql template1 ;
-    # FIXME setup postgres' password automatically
-    # \password postgres
     # FIXME not sure if needed
     sudo update-rc.d postgresql enable
   # Ruby
@@ -171,7 +165,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     # Some needed gems
     gem install rdoc
     gem install nokogiri
-    gem install debugger-ruby_core_source
     gem install rspec
   # Customize Sublime Text and add some packages FIXME improve
   cd /home/miguelgraz/Desktop ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/install_ST_plugins.sh ; chmod +x install_ST_plugins.sh ; . install_ST_plugins.sh ; rm -f install_ST_plugins.sh ;
