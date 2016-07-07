@@ -31,9 +31,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   gsettings set com.canonical.indicator.datetime show-locations true
   # Supress confirmation dialog when restarting/shutting down
   gsettings set com.canonical.indicator.session suppress-logout-restart-shutdown true
-  # Set my default wallpaper FIXME improve
-  wget -P /home/miguelgraz/Desktop https://www.dropbox.com/sh/i1soo9vhd2qdjzo/AAABuKn4w5IcW38jHJn95Y--a/LotR.jpg ;
-  gsettings set org.gnome.desktop.background picture-uri "file:///home/miguelgraz/Desktop/LotR.jpg" ;
   # Install Ubuntu Tweak for custom future tweaks
   sudo add-apt-repository -y ppa:tualatrix/ppa ; sudo apt-get update ; sudo apt-get -y install ubuntu-tweak ;
   # Install Compiz Settings Manager and allow alt+tab to work in all workspaces
@@ -176,5 +173,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   for d in /home/miguelgraz/Dropbox/Music/*/ ; do
     sudo ln -s "$d" /home/miguelgraz/Music ;
   done
+  # Set my default wallpaper
+  gsettings set org.gnome.desktop.background picture-uri "file:///home/miguelgraz/Dropbox/Documents/Besteiras/wallpapers/LotR.jpg" ;
   # Remove no longer required packages
   sudo apt-get -y autoremove
