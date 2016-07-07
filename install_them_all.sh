@@ -39,13 +39,17 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
 
 # Terminal tweaks
   # Font
-  gconftool-2 --set /apps/gnome-terminal/profiles/Default/font --type string "Ubuntu Mono 12"
+  gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ use-system-font false
+  gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ font "Ubuntu Mono 12"
+  # Scrollback
+  gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ scrollback-unlimited true
+  # Colors
+  gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ bold-color-same-as-fg false
+  gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ use-theme-colors true
   # Transparent background
-  gconftool-2 --type string --set /apps/gnome-terminal/profiles/Default/background_type transparent
-  # Custom darkness
-  gconftool-2 --type float --set /apps/gnome-terminal/profiles/Default/background_darkness 0.62875499999999995
-  # Unlimited scrolling
-  gconftool-2 --type boolean --set /apps/gnome-terminal/profiles/Default/scrollback_unlimited true
+  gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ use-theme-transparency false
+  gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ use-transparent-background true
+  gsettings set org.gnome.Terminal.Legacy.Profile:/org/gnome/terminal/legacy/profiles:/:$(gsettings get org.gnome.Terminal.ProfilesList default|tr -d \')/ background-transparency-percent 27
 
 # Install general apps
   # Chrome
