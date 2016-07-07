@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=/home/miguelgraz/.gimme_my_touchpad.sh
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=disable right-click
+Name=disable right-click
+Comment[en_US]=
+Comment=
