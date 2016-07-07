@@ -29,6 +29,8 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   gsettings set com.canonical.indicator.datetime show-date true
   gsettings set com.canonical.indicator.datetime show-day true
   gsettings set com.canonical.indicator.datetime show-locations true
+  # Supress confirmation dialog when restarting/shutting down
+  gsettings set com.canonical.indicator.session suppress-logout-restart-shutdown true
   # Set my default wallpaper FIXME improve
   wget -P /home/miguelgraz/Desktop https://www.dropbox.com/sh/i1soo9vhd2qdjzo/AAABuKn4w5IcW38jHJn95Y--a/LotR.jpg ;
   gsettings set org.gnome.desktop.background picture-uri "file:///home/miguelgraz/Desktop/LotR.jpg" ;
