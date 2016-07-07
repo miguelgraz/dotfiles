@@ -136,6 +136,11 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/notify_script.sh ;
     chmod +x notify_script.sh ;
     mv /home/miguelgraz/notify_script.sh /home/miguelgraz/.moc/notify_script.sh ;
+    # Run script to make touchpad work as a whole at the startup
+    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh ;
+    chmod +x .gimme_my_touchpad.sh ;
+    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh.desktop ;
+    mv /home/miguelgraz/.gimme_my_touchpad.sh.desktop /home/miguelgraz/.config/autostart/ ;
 
 # Development environment!
   # Default folder
