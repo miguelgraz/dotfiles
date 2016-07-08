@@ -31,6 +31,8 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   gsettings set com.canonical.indicator.datetime show-locations true
   # Supress confirmation dialog when restarting/shutting down
   gsettings set com.canonical.indicator.session suppress-logout-restart-shutdown true
+  # Shutdown the computer without dialog when using the power button
+  gsettings set org.gnome.settings-daemon.plugins.power button-power shutdown
   # Install Ubuntu Tweak for custom future tweaks
   sudo add-apt-repository -y ppa:tualatrix/ppa ; sudo apt-get update ; sudo apt-get -y install ubuntu-tweak ;
   # Install Compiz Settings Manager and allow alt+tab to work in all workspaces
