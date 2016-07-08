@@ -23,6 +23,8 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
   # Disable Shoppings suggestions on HUD
   gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
+  # Disable Alt shortcut to display HUD
+  gsettings set org.compiz.integrated show-hud "['disabled']"
   # Show user name on right corner
   gsettings set com.canonical.indicator.session show-real-name-on-panel true
   # Datetime tweaks
