@@ -62,6 +62,11 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   sudo apt-get update; sudo apt-get -y install google-chrome-stable;
   # Sublime Text 3
   sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 ; sudo apt-get update; sudo apt-get -y install sublime-text-installer ;
+  # Spotify
+  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
+  echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
+  sudo apt-get update
+  sudo apt-get install spotify-client
   # Skype
   sudo sh -c "echo 'deb http://archive.canonical.com/ trusty partner' >> /etc/apt/sources.list.d/canonical_partner.list" ; sudo apt-get update ; sudo apt-get -y install skype ;
   # Java needs
@@ -77,55 +82,19 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     # Sublime Text
     gsettings set org.compiz.integrated run-command-2 "['<Control><Alt>S']"
     gsettings set org.compiz.integrated command-2 "subl"
-    # Global shortcuts configs to control MOC through bluetooth headphones and keyboard \m/ d(-_-)b \m/
-      # Headphone Play
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "MOC Headphone Play"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "mocp --toggle-pause"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "AudioPlay"
-      # Headphone Pause
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name "MOC Headphone Pause"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command "mocp --toggle-pause"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding "AudioPause"
-      # Headphone Next song
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name "MOC Headphone Next Song"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command "mocp --next"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding "AudioNext"
-      # Headphone Previous song
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name "MOC Headphone Previous Song"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command "mocp --previous"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding "AudioPrev"
-      # Keyboard Play
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ name "MOC Keyboard Play"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ command "mocp --play"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ binding "<Primary><Alt>Return"
+    # Re-configure global media keys
       # Keyboard Pause/Unpause
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ name "MOC Keyboard PlayPause"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ command "mocp --toggle-pause"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ binding "<Primary><Alt>space"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys play "<Primary><Alt>space"
       # Keyboard Next song
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name "MOC Keyboard Next Song"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command "mocp --next"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding "<Primary><Alt>N"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys next "<Primary><Alt>n"
       # Keyboard Previous song
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name "MOC Keyboard Previous Song"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command "mocp --previous"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding "<Primary><Alt>B"
+      gsettings set org.gnome.settings-daemon.plugins.media-keys previous "<Primary><Alt>b"
       # Keyboard Notify Current song
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ name "MOC Send Notification Current Song"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ command "/home/miguelgraz/.moc/notify_script.sh"
-      gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ binding "<Primary><Alt>I"
-      # Activate them all
-      gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "[
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/',
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/',
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/',
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/',
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/',
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/',
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/',
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/',
-        '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/'
-      ]"
+      # gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "Spotify Send Notification Current Song"
+      # gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "/home/miguelgraz/.moc/notify_script.sh"
+      # gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Primary><Alt>I"
+      # Activate custom notifier shortcut
+      # gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
   # Grab custom config files
     cd /home/miguelgraz ;
     # .bashrc
@@ -133,22 +102,22 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     source /home/miguelgraz/.bashrc
     # .gitconfig
     rm -f .gitconfig ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gitconfig ;
-    # AutoStartMOC
-    mkdir /home/miguelgraz/.config/autostart ;
-    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.desktop ;
-    mv /home/miguelgraz/moc.desktop /home/miguelgraz/.config/autostart/ ;
-    # MOC config
-    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.config ;
-    rm -f /home/miguelgraz/.moc/config ;
-    mv /home/miguelgraz/moc.config /home/miguelgraz/.moc/config ;
-    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/notify_script.sh ;
-    chmod +x notify_script.sh ;
-    mv /home/miguelgraz/notify_script.sh /home/miguelgraz/.moc/notify_script.sh ;
     # Run script to make touchpad work as a whole at the startup
     wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh ;
     chmod +x .gimme_my_touchpad.sh ;
     wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh.desktop ;
     mv /home/miguelgraz/.gimme_my_touchpad.sh.desktop /home/miguelgraz/.config/autostart/ ;
+    # AutoStartMOC
+    # mkdir /home/miguelgraz/.config/autostart ;
+    # wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.desktop ;
+    # mv /home/miguelgraz/moc.desktop /home/miguelgraz/.config/autostart/ ;
+    # MOC config
+    # wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.config ;
+    # rm -f /home/miguelgraz/.moc/config ;
+    # mv /home/miguelgraz/moc.config /home/miguelgraz/.moc/config ;
+    # wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/notify_script.sh ;
+    # chmod +x notify_script.sh ;
+    # mv /home/miguelgraz/notify_script.sh /home/miguelgraz/.moc/notify_script.sh ;
 
 # Development environment!
   # Default folder
