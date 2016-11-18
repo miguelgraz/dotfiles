@@ -106,7 +106,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh ;
     chmod +x .gimme_my_touchpad.sh ;
     wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh.desktop ;
-    mv /home/miguelgraz/.gimme_my_touchpad.sh.desktop /home/miguelgraz/.config/autostart/ ;
+    mv /home/miguelgraz/.gimme_my_touchpad.sh.desktop /home/miguelgraz/.config/autostart/gimme_my_touchpad.sh.desktop ;
     # AutoStartMOC
     # mkdir /home/miguelgraz/.config/autostart ;
     # wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.desktop ;
