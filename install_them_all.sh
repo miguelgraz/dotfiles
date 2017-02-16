@@ -82,6 +82,9 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     # Sublime Text
     gsettings set org.compiz.integrated run-command-2 "['<Control><Alt>S']"
     gsettings set org.compiz.integrated command-2 "subl"
+    # Spotify    
+    gsettings set org.compiz.integrated run-command-3 "['<Control><Alt>P']"
+    gsettings set org.compiz.integrated command-3 "spotify"
     # Re-configure global media keys
       # Keyboard Pause/Unpause
       gsettings set org.gnome.settings-daemon.plugins.media-keys play "<Primary><Alt>space"
