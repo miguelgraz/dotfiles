@@ -61,12 +61,14 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
   sudo apt-get update; sudo apt-get -y install google-chrome-stable;
   # Sublime Text 3
-  sudo add-apt-repository -y ppa:webupd8team/sublime-text-3 ; sudo apt-get update; sudo apt-get -y install sublime-text-installer ;
+  wget -qO - https://download.sublimetext.com/sublimehq-pub.gpg | sudo apt-key add -
+  echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
+  sudo apt-get update; sudo apt-get -y install sublime-text;
   # Spotify
   sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
   echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
   sudo apt-get update
-  sudo apt-get install spotify-client
+  sudo apt-get -y install spotify-client
   # Skype
   sudo sh -c "echo 'deb http://archive.canonical.com/ trusty partner' >> /etc/apt/sources.list.d/canonical_partner.list" ; sudo apt-get update ; sudo apt-get -y install skype ;
   # Java needs
@@ -74,7 +76,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Flash plugin
   sudo apt-get -y install pepperflashplugin-nonfree
   # Other basic apps
-  sudo apt-get -y install aptitude curl git-core moc moc-ffmpeg-plugin vlc rar htop virtualbox whois steam
+  sudo apt-get -y install aptitude curl git-core moc moc-ffmpeg-plugin vlc rar htop virtualbox whois steam unclutter
   # Set custom shortcuts
     # Chrome
     gsettings set org.compiz.integrated run-command-1 "['<Control><Alt>C']"
@@ -110,17 +112,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     chmod +x .gimme_my_touchpad.sh ;
     wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh.desktop ;
     mv /home/miguelgraz/.gimme_my_touchpad.sh.desktop /home/miguelgraz/.config/autostart/gimme_my_touchpad.sh.desktop ;
-    # AutoStartMOC
-    # mkdir /home/miguelgraz/.config/autostart ;
-    # wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.desktop ;
-    # mv /home/miguelgraz/moc.desktop /home/miguelgraz/.config/autostart/ ;
-    # MOC config
-    # wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/moc.config ;
-    # rm -f /home/miguelgraz/.moc/config ;
-    # mv /home/miguelgraz/moc.config /home/miguelgraz/.moc/config ;
-    # wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/notify_script.sh ;
-    # chmod +x notify_script.sh ;
-    # mv /home/miguelgraz/notify_script.sh /home/miguelgraz/.moc/notify_script.sh ;
 
 # Development environment!
   # Default folder
