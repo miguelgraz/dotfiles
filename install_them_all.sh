@@ -76,7 +76,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Flash plugin
   sudo apt-get -y install pepperflashplugin-nonfree
   # Other basic apps
-  sudo apt-get -y install aptitude curl git-core moc moc-ffmpeg-plugin vlc rar htop virtualbox whois steam unclutter
+  sudo apt-get -y install aptitude curl git-core moc moc-ffmpeg-plugin vlc rar htop virtualbox whois steam
   # Set custom shortcuts
     # Chrome
     gsettings set org.compiz.integrated run-command-1 "['<Control><Alt>C']"
@@ -112,6 +112,11 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     chmod +x .gimme_my_touchpad.sh ;
     wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh.desktop ;
     mv /home/miguelgraz/.gimme_my_touchpad.sh.desktop /home/miguelgraz/.config/autostart/gimme_my_touchpad.sh.desktop ;
+    # Unclutter-xfixes to automatically hide the mouse cursor, install and autostart
+    sudo apt-get -y install libev-dev libxi-dev
+    git clone https://github.com/Airblader/unclutter-xfixes; cd unclutter-xfixes; make; sudo make install; cd ..; rm -rf unclutter-xfixes;
+    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.unclutter-xfixes.desktop ;
+    mv /home/miguelgraz/.unclutter-xfixes.desktop /home/miguelgraz/.config/autostart/.unclutter-xfixes.desktop ;    
 
 # Development environment!
   # Default folder
