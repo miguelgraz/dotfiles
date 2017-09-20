@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Exec=unclutter --timeout 1 --ignore-scrolling --fork
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
+Name[en_US]=autostart unclutter-xfixes
+Name=autostart unclutter-xfixes
+Comment[en_US]=
+Comment=
