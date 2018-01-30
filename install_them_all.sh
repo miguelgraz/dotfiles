@@ -152,10 +152,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   cd /home/miguelgraz/Desktop ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/install_ST_plugins.sh ; chmod +x install_ST_plugins.sh ; . install_ST_plugins.sh ; rm -f install_ST_plugins.sh ;
 
 # Last touches and/or things that need interation
-  # Create shortcuts to music folders inside the ~/Music folder
-  for d in /home/miguelgraz/Dropbox/Music/*/ ; do
-    sudo ln -s "$d" /home/miguelgraz/Music ;
-  done
   # Set my default wallpaper
   gsettings set org.gnome.desktop.background picture-uri "file:///home/miguelgraz/Dropbox/Documents/Besteiras/wallpapers/LotR.jpg" ;
   # Remove no longer required packages
