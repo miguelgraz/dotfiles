@@ -1,3 +1,15 @@
+# TODO: Adapt to handle Gnome 3 instead of Unity now
+# - Remove ubuntu-tweak and compizconfig-settings-manager
+# - Adapt the configurations that rely on compiz to work with pure gnome
+# - Update/remove configurations and keyboard shortcuts that aren't needed anymore
+# - Install gnome-tweaks
+# - Find a way to automatically configure gnome tweaks
+# - Install some extensions (dash to dock, sound input & output device chooser, workspace grid)
+# - Find a way to configure these extensions programmatically
+# - Is gimme_my_touchpad still needed?
+# - Add mysql
+# - Replace RVM with rbenv
+
 # Start with things that need interation
   # Dropbox, to start downloading early
   sudo apt-get -y install libappindicator1 nautilus-dropbox
