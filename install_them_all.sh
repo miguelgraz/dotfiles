@@ -6,6 +6,7 @@
 # - Find a way to automatically configure gnome tweaks
 # - Install some extensions (dash to dock, sound input & output device chooser, workspace grid)
 # - Find a way to configure these extensions programmatically
+# - Configure "mouse & touchpad" programmatically
 # - Is gimme_my_touchpad still needed?
 # - Add mysql
 # - Replace RVM with rbenv
