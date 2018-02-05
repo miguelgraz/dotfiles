@@ -121,7 +121,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Default folder
   mkdir /home/miguelgraz/Dev ;
   # Basic toolbelt
-  sudo apt-get -y install build-essential nodejs libxslt-dev libxml2-dev imagemagick libmagickwand-dev npm phantomjs ruby-dev libqt4-dev
+  sudo apt-get -y install build-essential nodejs libxslt-dev libxml2-dev imagemagick libmagickwand-dev npm phantomjs libqt4-dev
   # Heroku toolbelt
   wget -qO- https://toolbelt.heroku.com/install-ubuntu.sh | sh
   # Databases
