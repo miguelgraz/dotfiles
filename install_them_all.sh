@@ -11,6 +11,7 @@
 # - Add mysql
 # - Replace RVM with rbenv
 # - Fix spotify installation
+# - Remove the default "beep" from gnome-terminal
 
 # Start with things that need interation
   # Dropbox, to start downloading early
