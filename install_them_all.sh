@@ -10,6 +10,7 @@
 # - Is gimme_my_touchpad still needed?
 # - Add mysql
 # - Replace RVM with rbenv
+# - Fix spotify installation
 
 # Start with things that need interation
   # Dropbox, to start downloading early
