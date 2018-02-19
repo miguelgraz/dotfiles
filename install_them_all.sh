@@ -4,7 +4,7 @@
 # - Update/remove configurations and keyboard shortcuts that aren't needed anymore
 # - Install gnome-tweaks
 # - Find a way to automatically configure gnome tweaks
-# - Install some extensions (dash to dock, sound input & output device chooser, workspace grid)
+# - Install some extensions (dash to dock, sound input & output device chooser, workspace grid, panel OSD)
 # - Find a way to configure these extensions programmatically
 # - Configure "mouse & touchpad" programmatically
 # - Is gimme_my_touchpad still needed?
