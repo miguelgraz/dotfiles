@@ -11,5 +11,9 @@
 	stash = stash --include-untracked
 	hist = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	histmine = log --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --author=miguelgraz
+[pull]
+  	rebase = true
+[merge]
+  	ff = false
 [push]
-	default = current
+  	default = simple
