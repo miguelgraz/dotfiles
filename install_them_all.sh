@@ -12,6 +12,7 @@
 # - Replace RVM with rbenv
 # - Fix spotify installation
 # - Remove the default "beep" from gnome-terminal
+# - Install elasticsearch and set it to start as a service on startup `sudo systemctl enable elasticsearch.service`
 
 # Start with things that need interation
   # Dropbox, to start downloading early
