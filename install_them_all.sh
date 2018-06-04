@@ -1,16 +1,13 @@
 # TODO: Adapt to handle Gnome 3 instead of Unity now
-# - Remove ubuntu-tweak and compizconfig-settings-manager
-# - Adapt the configurations that rely on compiz to work with pure gnome
-# - Update/remove configurations and keyboard shortcuts that aren't needed anymore
+# - Set the correct number of workspaces
+# - Allow alt+tab to work in all workspaces
 # - Install gnome-tweaks
 # - Find a way to automatically configure gnome tweaks
 # - Install some extensions (dash to dock, sound input & output device chooser, workspace grid, panel OSD)
 # - Find a way to configure these extensions programmatically
 # - Configure "mouse & touchpad" programmatically
-# - Is gimme_my_touchpad still needed?
 # - Add mysql
 # - Replace RVM with rbenv
-# - Fix spotify installation
 # - Remove the default "beep" from gnome-terminal
 # - Install elasticsearch and set it to start as a service on startup `sudo systemctl enable elasticsearch.service`
 
@@ -33,14 +30,8 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Best shortcuts ever to increase/decrease volume
   gsettings set org.gnome.settings-daemon.plugins.media-keys volume-up "<Ctrl><Shift>Up"
   gsettings set org.gnome.settings-daemon.plugins.media-keys volume-down "<Ctrl><Shift>Down"
-  # Enable 2 horizontal workspaces
-  gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ hsize 2
-  # and 3 vertical workspaces
-  gsettings set org.compiz.core:/org/compiz/profiles/unity/plugins/core/ vsize 3
   # Disable Shoppings suggestions on HUD
   gsettings set com.canonical.Unity.Lenses disabled-scopes "['more_suggestions-amazon.scope', 'more_suggestions-u1ms.scope', 'more_suggestions-populartracks.scope', 'music-musicstore.scope', 'more_suggestions-ebay.scope', 'more_suggestions-ubuntushop.scope', 'more_suggestions-skimlinks.scope']"
-  # Disable Alt shortcut to display HUD
-  gsettings set org.compiz.integrated show-hud "['disabled']"
   # Show user name on right corner
   gsettings set com.canonical.indicator.session show-real-name-on-panel true
   # Datetime tweaks
@@ -53,11 +44,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   gsettings set org.gnome.settings-daemon.plugins.power button-power shutdown
   # Do not change zoom of PDF docs when using its index
   gsettings set org.gnome.Evince allow-links-change-zoom false
-  # Install Ubuntu Tweak for custom future tweaks
-  sudo add-apt-repository -y ppa:tualatrix/ppa ; sudo apt-get update ; sudo apt-get -y install ubuntu-tweak ;
-  # Install Compiz Settings Manager and allow alt+tab to work in all workspaces
-  sudo apt-get -y install compizconfig-settings-manager
-  dconf write /org/compiz/profiles/unity/plugins/unityshell/alt-tab-bias-viewport false
 
 # Terminal tweaks
   # Font
@@ -85,9 +71,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   echo "deb https://download.sublimetext.com/ apt/stable/" | sudo tee /etc/apt/sources.list.d/sublime-text.list
   sudo apt-get update; sudo apt-get -y install sublime-text;
   # Spotify
-  sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys BBEBDCB318AD50EC6865090613B00F1FD2C19886
-  echo deb http://repository.spotify.com stable non-free | sudo tee /etc/apt/sources.list.d/spotify.list
-  sudo apt-get update
   sudo apt-get -y install spotify-client
   # Skype
   sudo sh -c "echo 'deb http://archive.canonical.com/ trusty partner' >> /etc/apt/sources.list.d/canonical_partner.list" ; sudo apt-get update ; sudo apt-get -y install skype ;
@@ -114,12 +97,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
       gsettings set org.gnome.settings-daemon.plugins.media-keys next "<Primary><Alt>n"
       # Keyboard Previous song
       gsettings set org.gnome.settings-daemon.plugins.media-keys previous "<Primary><Alt>b"
-      # Keyboard Notify Current song
-      # gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name "Spotify Send Notification Current Song"
-      # gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command "/home/miguelgraz/.moc/notify_script.sh"
-      # gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding "<Primary><Alt>I"
-      # Activate custom notifier shortcut
-      # gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']"
   # Grab custom config files
     cd /home/miguelgraz ;
     # .bashrc
@@ -127,11 +104,6 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
     source /home/miguelgraz/.bashrc
     # .gitconfig
     rm -f .gitconfig ; wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gitconfig ;
-    # Run script to make touchpad work as a whole at the startup
-    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh ;
-    chmod +x .gimme_my_touchpad.sh ;
-    wget https://raw.githubusercontent.com/miguelgraz/dotfiles/master/.gimme_my_touchpad.sh.desktop ;
-    mv /home/miguelgraz/.gimme_my_touchpad.sh.desktop /home/miguelgraz/.config/autostart/gimme_my_touchpad.sh.desktop ;
 
 # Development environment!
   # Default folder
