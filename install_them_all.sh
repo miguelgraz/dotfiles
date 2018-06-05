@@ -1,10 +1,11 @@
 # TODO: Adapt to handle Gnome 3 instead of Unity now
-# - Set the correct number of workspaces
-# - Allow alt+tab to work in all workspaces
 # - Install gnome-tweaks
 # - Find a way to automatically configure gnome tweaks
 # - Install some extensions (dash to dock, sound input & output device chooser, workspace grid, panel OSD)
 # - Find a way to configure these extensions programmatically
+# - Set the correct number of workspaces
+# - Fix spotify installation
+# - Fix creation of custom keyboard shortcuts 
 # - Configure "mouse & touchpad" programmatically
 # - Add mysql
 # - Replace RVM with rbenv
