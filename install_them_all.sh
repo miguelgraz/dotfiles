@@ -5,7 +5,13 @@
 # - Find a way to configure these extensions programmatically
 # - Set the correct number of workspaces
 # - Fix spotify installation
+# - Install spotify-now 
+#   cd /usr/bin
+#   sudo wget https://raw.githubusercontent.com/getmicah/spotify-now/master/spotify-now
+#   sudo chmod +x spotify-now
+# - Install https://github.com/miguelgraz/dotfiles/blob/master/notify_script.sh
 # - Fix creation of custom keyboard shortcuts 
+# - Create custom keyboard shortcut to notify_script (ctrl + alt + i)
 # - Configure "mouse & touchpad" programmatically
 # - Add mysql
 # - Replace RVM with rbenv
