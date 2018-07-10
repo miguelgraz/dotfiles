@@ -86,7 +86,7 @@ sudo apt-get update ; sudo apt-get -y upgrade ; sudo apt-get -y dist-upgrade ;
   # Flash plugin
   sudo apt-get -y install pepperflashplugin-nonfree
   # Other basic apps
-  sudo apt-get -y install aptitude curl git-core moc moc-ffmpeg-plugin vlc rar htop virtualbox whois steam
+  sudo apt-get -y install aptitude curl git-core vlc rar htop virtualbox whois steam
   # Set custom shortcuts
     # Firefox
     gsettings set org.compiz.integrated run-command-1 "['<Control><Alt>C']"
