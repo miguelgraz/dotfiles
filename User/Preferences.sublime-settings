@@ -60,4 +60,5 @@
 	"wide_caret": true,
 	"caret_extra_bottom": 3,
 	"caret_extra_top": 3,
+	"ensure_newline_at_eof_on_save": true,
 }
