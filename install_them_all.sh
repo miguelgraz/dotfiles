@@ -1,7 +1,7 @@
 # TODO: Adapt to handle Gnome 3 instead of Unity now
 # - Install gnome-tweaks
 # - Find a way to automatically configure gnome tweaks
-# - Install some extensions (dash to dock, sound input & output device chooser, workspace grid, panel OSD)
+# - Install some extensions (dash to dock, sound input & output device chooser, workspace grid, panel OSD, Bluetooth quick connect)
 # - Find a way to configure these extensions programmatically
 # - Set the correct number of workspaces
 # - Fix spotify installation
